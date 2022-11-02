@@ -1,0 +1,147 @@
+body{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 639px;
+}
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.outer{
+    border: 1px solid gray;
+    border-radius: 50%;
+    background-color: lightgray;
+    height: 350px;
+    width: 350px;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    transform-origin: bottom;
+    animation: roll 5s linear infinite ;
+    z-index:1;
+}
+@keyframes roll{
+    0%{
+        rotate: 0deg;
+        filter: hue-rotate(0deg);
+    }
+    25%{
+        rotate: 15deg;
+    }
+    50%{
+        rotate: 0deg;
+    }
+    75%{
+        rotate: -15deg;
+    }
+    100%{
+        rotate: 0deg;
+        filter: hue-rotate(360deg);
+    }
+}
+.outer::after{
+    position: absolute;
+    content: '';
+    width: 151px;
+    height: 50px;
+    border: 7px solid black;
+    opacity: 75%;
+    border-radius: 50%;
+    left: 50%;
+    translate: -50%;
+    top: -4px;
+}
+.outer::before{
+    position: absolute;
+    content: '';
+    width: 150px;
+    height: 100px;
+    border-radius: 50%;
+    left: 50%;
+    translate: -50%;
+    top: 80px;
+    background-color: whitesmoke;
+    opacity: 20%;
+    z-index: 1;
+}
+.shadow{
+    width: 166px;
+    height: 70px;
+    border: 10px solid black;
+    border-radius: 50%;
+    opacity: 85%;
+    background: gray;
+    box-shadow: 0px 5px 2px 2px black;
+}
+.inner{
+    position: absolute;
+    width: 330px;
+    height: 160px;
+    background-color: brown;
+    bottom: 10px;
+    border-bottom-right-radius: 172px;
+    border-bottom-left-radius: 172px;
+    transform-origin: top;
+    animation: liquid 5s linear infinite ;
+}
+
+@keyframes liquid{
+    0%{
+        rotate: 0deg;
+    }
+    25%{
+        rotate: -20deg;
+    }
+    50%{
+        rotate: 0deg;
+    }
+    75%{
+        rotate: 20deg;
+    }
+    100%{
+        rotate: 0deg;
+    }
+}
+.inner2{
+    height: 50px;
+    width: 100%;
+    background-color: red;
+    position: absolute;
+    top: -24px;
+    border-radius: 50%;
+    z-index: 0;
+}
+.bottom_shadow{
+    width: 200px;
+    height: 40px;
+    background-color: rgba(0,0,0,0.5);
+    border-radius: 50%;
+    opacity: 60%;
+    position: relative;
+    left: 76px;
+    filter: blur(2px);
+    z-index: 0;
+    top: -10px;
+    animation: slide 5s linear infinite;
+}
+
+@keyframes slide{
+    0%{
+        translate: 0px;
+    }
+    25%{
+        translate: 55px;
+    }
+    50%{
+        translate: 0px;
+    }
+    75%{
+        translate: -55px;
+    }
+    100%{
+        translate: 0px;
+    }
+}
